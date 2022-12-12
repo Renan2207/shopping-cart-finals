@@ -50,7 +50,7 @@
                     </div>
                 </nav>
                 <h3>Sign In</h3>
-                <p class="mb-4">Sign in to continue to our application</p>
+                <p class="mb-4">Sign in to continue to proceed shopping</p>
                 <form method="post" action="include/login-inc.php">
                     <input type="text" name="username" class="form-control mb-3" placeholder="Email Address" required />
                     <input type="password" name="password" class="form-control mb-3" placeholder="Password" required />
