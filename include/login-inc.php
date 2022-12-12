@@ -3,10 +3,10 @@
 		session_start();
 		require 'database.php';
 
-		$emailAddress = $_POST['username'];
+		$emailAddress = $_POST['emailAddress'];
 		$password = $_POST['password'];
 	
-		$sql = "SELECT * FROM tbl_user";
+		$sql = "SELECT * FROM customer";
 		$stmt = $conn->prepare($sql);
 		$stmt->execute();
 		$result = $stmt->get_result();
@@ -15,9 +15,9 @@
 			while ($row = $result->fetch_assoc()) {
 				$inputHashPass = md5($password);
 
-				$emailMatch = ($username == $row['username']) ? true : false;
+				$emailMatch = ($emailAddress == $row['emailAddress']) ? true : false;
 				$passMatch = ($inputHashPass == $row['password']) ? true : false;
-				if ($userMatch == true && $passMatch == true) {
+				if ($emailMatch == true && $passMatch == true) {
 					$_SESSION['name'] = $row['firstName'] . " " . $row['lastName'];
 					$_SESSION['customerID'] = $row['customerID'];
 					header("Location: ../index.php");

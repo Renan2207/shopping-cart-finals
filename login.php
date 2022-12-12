@@ -42,13 +42,17 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
                                 <a class="nav-link" id="current" href="login.php">Sign In</a>
+                                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="backend-login.php"><span class="list">admin panel</span></a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
                 <h3>Sign In</h3>
                 <p class="mb-4">Sign in to continue to our application</p>
                 <form method="post" action="include/login-inc.php">
-                    <input type="text" name="username" class="form-control mb-3" placeholder="username" required />
+                    <input type="text" name="username" class="form-control mb-3" placeholder="Email Address" required />
                     <input type="password" name="password" class="form-control mb-3" placeholder="Password" required />
                     <button class="btn btn-secondary btn-signin mb-5 w-100" name="submitBTN" type="submit">Sign in</button>
                 </form>
